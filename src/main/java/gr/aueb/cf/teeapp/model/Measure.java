@@ -28,6 +28,10 @@ public class Measure {
     @OneToMany(mappedBy = "measure")
     private Set<Project> projects = new HashSet<>();
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "consultant_id")
+    private Consultant consultant;
+
     public Set<Project> getAllProjects() {
         if (projects == null) projects = new HashSet<>();
         return Collections.unmodifiableSet(projects);

@@ -6,5 +6,6 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 
 public interface MaturationActionCategoryRepository extends JpaRepository<MaturationActionCategory, Long>,
         JpaSpecificationExecutor<MaturationActionCategory> {
+
 }
 

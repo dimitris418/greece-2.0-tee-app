@@ -13,7 +13,6 @@ public interface MaturationActionRepository extends JpaRepository<MaturationActi
     Optional<MaturationAction> findById(String id);
     Optional<MaturationAction> findByUuid(String uuid);
     Optional<MaturationAction> findByReferenceNumber(String referenceNumber);
-    Optional<MaturationAction> findByRegulatoryAuthority(String regulatoryAuthority);
     List<MaturationAction> findByStartDate(String startDate);
     List<MaturationAction> findByEndDate(String endDate);
     List<MaturationAction> findByDescription(String description);

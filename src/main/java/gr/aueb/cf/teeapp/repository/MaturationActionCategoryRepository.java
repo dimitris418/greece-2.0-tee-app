@@ -1,0 +1,10 @@
+package gr.aueb.cf.teeapp.repository;
+
+import gr.aueb.cf.teeapp.model.MaturationActionCategory;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
+
+public interface MaturationActionCategoryRepository extends JpaRepository<MaturationActionCategory, Long>,
+        JpaSpecificationExecutor<MaturationActionCategory> {
+}
+

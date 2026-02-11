@@ -41,7 +41,7 @@ public class SecurityConfiguration {
                 .cors(httpSecurityCorsConfigurer -> httpSecurityCorsConfigurer.configurationSource(corsConfigurationSource()))
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(req -> req
-                        .requestMatchers(HttpMethod.POST, "/api/teachers").permitAll()           // register
+                        .requestMatchers(HttpMethod.POST, "/api/consultants").permitAll()           // register
                         .requestMatchers("/api/auth/authenticate").permitAll()
                         .requestMatchers(
                                 "/swagger-ui.html",        // The old Swagger UI HTML (if used)
@@ -51,8 +51,8 @@ public class SecurityConfiguration {
                                 "/swagger-resources/**",   // Swagger resource descriptors
                                 "/configuration/**"        // Swagger configuration endpoints
                         ).permitAll()
-                        .requestMatchers("/api/teachers/**").hasAnyRole("SUPER_ADMIN", "TEACHER")
-                        .requestMatchers("/api/employess/**").hasRole("EMPLOYEE")
+                        .requestMatchers("/api/consultants/**").hasAnyRole("SUPER_ADMIN", "CONSULTANT")
+                        .requestMatchers("/api/employees/**").hasRole("EMPLOYEE")
                         .requestMatchers("/**").authenticated()
                 )
                 .sessionManagement(session -> session.sessionCreationPolicy(STATELESS))

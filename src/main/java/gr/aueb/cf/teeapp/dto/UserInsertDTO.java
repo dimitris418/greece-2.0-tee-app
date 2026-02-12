@@ -46,5 +46,5 @@ public record UserInsertDTO(
         GenderType gender,
 
         @NotNull(message = "Role is required")
-        Role role
+        Role role_id
 ) {}

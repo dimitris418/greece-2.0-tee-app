@@ -8,7 +8,7 @@ import java.lang.module.Configuration;
 import java.util.List;
 import java.util.Optional;
 
-public interface ConsultantRepository extends JpaRepository<Configuration, Long>,
+public interface ConsultantRepository extends JpaRepository<Consultant, Long>,
         JpaSpecificationExecutor<Consultant> {
 
     Optional<Consultant> findByUserId(Long id);

@@ -15,6 +15,16 @@ java {
 	}
 }
 
+bootJar {
+	archiveFileName = "teeapp.jar"  // Forces the output JAR name
+}
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
 repositories {
 	mavenCentral()
 }

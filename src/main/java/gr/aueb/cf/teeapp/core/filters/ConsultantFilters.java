@@ -18,8 +18,5 @@ public class ConsultantFilters extends GenericFilters {
     private String userVat;
 
     @Nullable
-    private String userAmka;
-
-    @Nullable
     private Boolean active;
 }

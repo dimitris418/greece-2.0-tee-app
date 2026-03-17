@@ -1,6 +1,7 @@
 package gr.aueb.cf.teeapp.dto;
 
 import gr.aueb.cf.teeapp.core.enums.GenderType;
+import gr.aueb.cf.teeapp.model.auth.Role;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
@@ -51,5 +52,5 @@ public record UserUpdateDTO(
         GenderType gender,
 
         @NotNull(message = "Role is required")
-        Long roleId
+        Role roleId
 ) {}

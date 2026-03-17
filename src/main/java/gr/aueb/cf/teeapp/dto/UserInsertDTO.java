@@ -1,6 +1,7 @@
 package gr.aueb.cf.teeapp.dto;
 
 import gr.aueb.cf.teeapp.core.enums.GenderType;
+import gr.aueb.cf.teeapp.model.auth.Role;
 import jakarta.validation.constraints.*;
 import lombok.Builder;
 
@@ -45,5 +46,5 @@ public record UserInsertDTO(
         GenderType gender,
 
         @NotNull(message = "Role is required")
-        Long roleId
+        Role roleId
 ) {}

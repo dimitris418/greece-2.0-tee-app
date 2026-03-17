@@ -1,0 +1,7 @@
+package gr.aueb.cf.teeapp.repository;
+
+import gr.aueb.cf.teeapp.model.Project;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface ProjectRepository extends JpaRepository<Project, Long> {
+}

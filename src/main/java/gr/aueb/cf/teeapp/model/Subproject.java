@@ -22,4 +22,8 @@ public class Subproject {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "portfolio_id")
     private Portfolio portfolio;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "responsible_authority_id")
+    private ResponsibleAuthority responsibleAuthority;
 }

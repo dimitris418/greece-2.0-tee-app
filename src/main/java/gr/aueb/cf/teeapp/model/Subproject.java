@@ -1,10 +1,11 @@
 package gr.aueb.cf.teeapp.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @AllArgsConstructor
@@ -28,4 +29,25 @@ public class Subproject {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "responsible_authority_id")
     private ResponsibleAuthority responsibleAuthority;
+
+    @Getter(AccessLevel.PRIVATE)
+    @OneToMany(mappedBy = "subproject")
+    private Set<SubProjectProcurementStage> subProjectProcurementStages = new HashSet<>();
+
+    public Set<SubProjectProcurementStage> getAllSubprojectsProcurementStages() {
+        if (subProjectProcurementStages == null) subProjectProcurementStages = new HashSet<>();
+        return Collections.unmodifiableSet(subProjectProcurementStages);
+    }
+
+    public void addSubprojectProcurementStage(SubProjectProcurementStage subProjectProcurementStage ) {
+        if (subProjectProcurementStages == null) subProjectProcurementStages = new HashSet<>();
+        subProjectProcurementStages.add(subProjectProcurementStage);
+        subProjectProcurementStage.setSubproject(this);
+    }
+
+    public void removeSubprojectProcurementStage(SubProjectProcurementStage subProjectProcurementStage) {
+        if (subProjectProcurementStages == null) return;
+        subProjectProcurementStages.remove(subProjectProcurementStage);
+        subProjectProcurementStage.setSubproject(null);
+    }
 }

@@ -22,6 +22,10 @@ public class ProcurementStage {
     @Column(nullable = false, unique = true)
     private String name;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "procurement_stage_category_id")
+    private ProcurementStageCategory procurementStageCategory;
+
     @Getter(AccessLevel.PRIVATE)
     @OneToMany(mappedBy = "procurementStage")
     private Set<SubProjectProcurementStage> subProjectProcurementStages = new HashSet<>();

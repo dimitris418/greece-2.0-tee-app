@@ -24,22 +24,22 @@ public class ResponsibleAuthority {
 
     @Getter(AccessLevel.PRIVATE)
     @OneToMany(mappedBy = "responsibleAuthority")
-    private Set<Subproject> subprojects = new HashSet<>();
+    private Set<Project> projects = new HashSet<>();
 
-    public Set<Subproject> getAllSubprojects() {
-        if (subprojects == null) subprojects = new HashSet<>();
-        return Collections.unmodifiableSet(subprojects);
+    public Set<Project> getAllProjects() {
+        if (projects == null) projects = new HashSet<>();
+        return Collections.unmodifiableSet(projects);
     }
 
-    public void addSubproject(Subproject subproject) {
-        if (subprojects == null) subprojects = new HashSet<>();
-        subprojects.add(subproject);
-        subproject.setResponsibleAuthority(this);
+    public void addProject(Project project) {
+        if (projects == null) projects = new HashSet<>();
+        projects.add(project);
+        project.setResponsibleAuthority(this);
     }
 
-    public void removeSubproject(Subproject subproject) {
-        if (subprojects == null) return;
-        subprojects.remove(subproject);
-        subproject.setResponsibleAuthority(null);
+    public void removeProject(Project project) {
+        if (projects == null) return;
+        projects.remove(project);
+        project.setResponsibleAuthority(null);
     }
 }

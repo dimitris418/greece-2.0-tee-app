@@ -26,10 +26,6 @@ public class Subproject {
     @JoinColumn(name = "portfolio_id")
     private Portfolio portfolio;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "responsible_authority_id")
-    private ResponsibleAuthority responsibleAuthority;
-
     @Getter(AccessLevel.PRIVATE)
     @OneToMany(mappedBy = "subproject")
     private Set<SubProjectProcurementStage> subProjectProcurementStages = new HashSet<>();

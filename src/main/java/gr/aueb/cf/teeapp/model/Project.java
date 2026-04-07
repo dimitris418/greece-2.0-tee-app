@@ -26,6 +26,10 @@ public class Project {
     @JoinColumn(name = "measure_id")
     private Measure measure;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "responsible_authority_id")
+    private ResponsibleAuthority responsibleAuthority;
+
     @Getter(AccessLevel.PRIVATE)
     @OneToMany(mappedBy = "project")
     private Set<Portfolio> portfolios = new HashSet<>();
